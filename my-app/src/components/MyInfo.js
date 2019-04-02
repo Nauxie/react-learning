@@ -14,9 +14,10 @@ import navbar from './MyInfo.css';
               <li> Tuscany, Italy </li>
               <li> Colonge, Germany </li>
               <li> Fort Lauderdale, Florida </li>
-              <li> <img src = {logo} alt ="logo"/></li>
+               
 
-            </ul>  
+            </ul>
+            <img src = {logo} alt ="logo" height = "260"/>  
             </div>
             )
       }
