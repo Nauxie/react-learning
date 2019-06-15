@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import todos from "./todosData.js"
+import TodoItem from "./components/TodoItem"
 import './App.css';
-import MyInfo from './components/MyInfo.js';
-import Product from './components/Product.js'
-import products from "./vschoolProducts.js"
+
 
 
 class App extends Component {
   render() {
     //console.log(products)
-    const productList = products.map(prod => {
-      return <Product key={prod.id} name={prod.name} desc={prod.description} price = {prod.price}/>
+    const todosList = todos.map(todo => {
+      return (<TodoItem list = {todo} key= {todo.id}/>)
     })
+      
+    
     return (
-      <div>
-        {productList}
+      <div className="todo-list">
+        {todosList}
       </div>
     );
   }
