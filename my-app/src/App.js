@@ -1,24 +1,29 @@
-import React, { Component } from 'react';
-import todos from "./todosData.js"
-import TodoItem from "./components/TodoItem"
-import './App.css';
+import React from "react"
 
-
-
-class App extends Component {
-  render() {
-    //console.log(products)
-    const todosList = todos.map(todo => {
-      return (<TodoItem list = {todo} key= {todo.id}/>)
-    })
-      
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            isLoggedIn: false
+        }
+        
+    }
     
-    return (
-      <div className="todo-list">
-        {todosList}
-      </div>
-    );
-  }
+    render() {
+        let status = ""
+        if (this.state.isLoggedIn) {
+            status = "in"
+        }
+        else {
+            status = "out"
+        }
+        
+        return (
+            <div>
+                <h1>You are currently logged {status}</h1>
+            </div>
+            
+        )
+    }
 }
-
 export default App
